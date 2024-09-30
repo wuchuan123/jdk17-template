@@ -15,6 +15,19 @@ spring:
       max-file-size: 16MB # 单个文件大小
       max-request-size: 32MB # 设置总上传的文件大小
 
+  datasource:
+    url: jdbc:mysql://localhost:3306/mydatabase
+    username: root
+    password: password
+
+  flyway:
+    url: jdbc:mysql://localhost:3306/mydatabase
+    user: root
+    password: password
+    locations: classpath:db/migration
+    baseline-on-migrate: true
+
+
 
 server:
   servlet:
@@ -56,11 +69,5 @@ mybatis-plus:
   encryptor:
     password: XDV71a+xqStEA3WH # 加解密的秘钥，可使用 https://www.imaegoo.com/2020/aes-key-generator/ 网站生成
 
-mybatis-plus-join:
-  banner: false # 是否打印 mybatis plus join banner，默认true
-  sub-table-logic: true # 全局启用副表逻辑删除，默认true。关闭后关联查询不会加副表逻辑删除
-  ms-cache: true # 拦截器MappedStatement缓存，默认 true
-  table-alias: t # 表别名(默认 t)
-  logic-del-type: on # 副表逻辑删除条件的位置，支持 WHERE、ON，默认 ON
 
 

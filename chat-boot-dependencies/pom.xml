@@ -2,10 +2,14 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>demo</artifactId>
+        <groupId>com.admin.boot</groupId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.admin.boot</groupId>
-    <version>0.0.1-SNAPSHOT</version>
-    <artifactId>demo</artifactId>
+
+    <artifactId>chat-boot-dependencies</artifactId>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -21,16 +25,22 @@
         <springdoc.version>2.6.0</springdoc.version>
         <knife4j.version>4.5.0</knife4j.version>
         <jwt.version>3.2.0</jwt.version>
-        <spring-security.version>3.3.4</spring-security.version>
         <!-- 工具类相关 -->
         <captcha-plus.version>3.3.4</captcha-plus.version>
+        <flyway.version>10.18.2</flyway.version>
     </properties>
     <dependencyManagement>
         <dependencies>
             <!--mybatis-plus-->
             <dependency>
                 <groupId>com.baomidou</groupId>
-                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <artifactId>mybatis-plus-spring-boot3-starter</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-generator</artifactId>
                 <version>${mybatis-plus.version}</version>
             </dependency>
 
@@ -99,13 +109,18 @@
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-security</artifactId>
-                <version>${spring-security.version}</version>
             </dependency>
 
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-test</artifactId>
                 <version>${captcha-plus.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.flywaydb</groupId>
+                <artifactId>flyway-core</artifactId>
+                <version>${flyway.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

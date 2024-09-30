@@ -1,13 +1,14 @@
 package com.admin.boot;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
 @SpringBootApplication
+@MapperScan("com.admin.boot.mapper")
 public class BootApplication {
     public static void main(String[] args) {
-        System.out.print("hello");
         SpringApplication.run(BootApplication.class, args);
     }
 }
